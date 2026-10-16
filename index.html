@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="store_fidia — dashboard katalog produk berbasis DummyJSON untuk PTS Pemrograman Web.">
+  <meta name="author" content="Fidiani">
+  <title>store_fidia — Product Dashboard</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Lewati ke konten utama</a>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="store_fidia beranda">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="brand-name">store<span>_fidia</span><small>PRODUCT DASHBOARD</small></span>
+      </a>
+      <nav class="top-nav" aria-label="Navigasi utama">
+        <a class="nav-link active" href="#catalog">Katalog</a>
+        <a class="nav-link" href="#saved-notes">Catatan</a>
+      </nav>
+      <div class="top-actions">
+        <span class="student-chip"><span class="status-dot" aria-hidden="true"></span> NIM 2440304022</span>
+        <button class="icon-button theme-toggle" id="theme-toggle" type="button" aria-label="Aktifkan dark mode" title="Ganti tema">
+          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.9 13A8.5 8.5 0 0 1 11 3.1 8.7 8.7 0 1 0 20.9 13Z"></path></svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> PRODUCT OVERVIEW <span class="eyebrow-muted">/ PTS 2026</span></p>
+          <h1 id="hero-title">Jelajahi produk,<br><span>temukan pilihanmu.</span></h1>
+          <p class="hero-description">Satu ruang untuk melihat katalog, menyimpan produk favorit, dan merangkum data produk dari API.</p>
+          <div class="hero-meta">
+            <span class="live-pill"><span class="status-dot" aria-hidden="true"></span> DATA API</span>
+            <span class="meta-separator" aria-hidden="true"></span>
+            <span>DummyJSON Products</span>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+          <div class="art-card art-card-back"><span class="art-mini-label">COLLECTION</span><div class="art-lines"><i></i><i></i><i></i></div></div>
+          <div class="art-card art-card-front"><div class="art-card-top"><span class="art-app-dot"></span><span>STORE / 01</span><span class="art-more">•••</span></div><div class="art-product-shape"><span></span><i></i></div><div class="art-bottom-line"><b></b><b></b></div></div>
+          <div class="art-floating floating-a">API <strong>↗</strong></div><div class="art-floating floating-b"><span class="floating-star">✦</span> Smart catalog</div>
+          <span class="art-cross cross-a">✳</span><span class="art-cross cross-b">+</span>
+        </div>
+      </section>
+
+      <section class="stats-grid" aria-label="Ringkasan statistik produk" aria-live="polite">
+        <article class="stat-card">
+          <div class="stat-heading"><span class="stat-icon icon-violet" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z"></path><path d="m4.5 7.8 7.5 4.4 7.5-4.4M12 12.2V21"></path></svg></span><span class="stat-label">Produk dimuat</span></div>
+          <p class="stat-value" id="stat-products">—</p><p class="stat-foot">Diterima dari endpoint API</p>
+        </article>
+        <article class="stat-card">
+          <div class="stat-heading"><span class="stat-icon icon-mint" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5m0 14h16M7 15l4-4 3 2 5-6"></path></svg></span><span class="stat-label">Rata-rata harga</span></div>
+          <p class="stat-value" id="stat-average">—</p><p class="stat-foot">Estimasi rupiah dari harga API</p>
+        </article>
+        <article class="stat-card">
+          <div class="stat-heading"><span class="stat-icon icon-orange" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 14.8 8.7 21 9.6l-4.5 4.4 1.1 6.2L12 17.3l-5.6 2.9 1.1-6.2L3 9.6l6.2-.9z"></path></svg></span><span class="stat-label">Harga tertinggi</span></div>
+          <p class="stat-value" id="stat-highest">—</p><p class="stat-foot stat-truncate" id="stat-highest-title">Menunggu data API</p>
+        </article>
+        <article class="stat-card">
+          <div class="stat-heading"><span class="stat-icon icon-blue" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="8" height="7" rx="1.5"></rect><rect x="13" y="4" width="8" height="7" rx="1.5"></rect><rect x="3" y="13" width="8" height="7" rx="1.5"></rect><rect x="13" y="13" width="8" height="7" rx="1.5"></rect></svg></span><span class="stat-label">Kategori unik</span></div>
+          <p class="stat-value" id="stat-categories">—</p><p class="stat-foot">Berdasarkan produk dimuat</p>
+        </article>
+      </section>
+
+      <section class="catalog-section" id="catalog" aria-labelledby="catalog-title">
+        <div class="section-heading">
+          <div><p class="eyebrow"><span class="eyebrow-line"></span> DISCOVER</p><h2 id="catalog-title">Katalog produk <span class="heading-count" id="catalog-count">—</span></h2><p class="section-subtitle">Data asli DummyJSON ditampilkan dalam katalog yang lebih mudah dibaca.</p><p class="price-disclaimer">Dengan asumsi nilai angka price dari API adalah USD, nominal Rupiah di bawah merupakan konversi ilustratif × Rp18.037,74 (kurs jual BI, 16 Oktober 2026; <a href="https://www.bi.go.id/id/statistik/informasi-kurs/transaksi-bi/Default.aspx" target="_blank" rel="noopener noreferrer">sumber kurs BI</a>). DummyJSON tidak menyertakan properti currency di setiap produk; nilai Rupiah ini bukan harga lokal resmi produk.</p></div>
+          <div class="catalog-tools"><label class="search-box" for="search-input"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.4 4.4"></path></svg><input id="search-input" type="search" placeholder="Cari produk..." autocomplete="off"><kbd>/</kbd></label></div>
+        </div>
+
+        <div class="filter-toolbar">
+          <div class="filter-tabs" role="group" aria-label="Tampilan katalog">
+            <button type="button" class="filter-tab active" data-view="all" aria-pressed="true">Semua produk <span id="all-count">—</span></button>
+            <button type="button" class="filter-tab" data-view="favorites" aria-pressed="false">♡ Favorit <span id="favorites-count">0</span></button>
+          </div>
+          <div class="sort-control">
+            <span id="sort-label" class="sort-label">Urutkan</span>
+            <div class="custom-dropdown sort-dropdown" id="sort-dropdown">
+              <button class="custom-dropdown-trigger" id="sort-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="sort-menu" aria-labelledby="sort-label sort-current">
+                <span id="sort-current">Rekomendasi</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+              </button>
+              <div class="custom-dropdown-menu sort-menu" id="sort-menu" role="listbox" aria-label="Urutkan produk" hidden>
+                <button type="button" class="custom-option selected" role="option" aria-selected="true" data-value="recommended">Rekomendasi</button>
+                <button type="button" class="custom-option" role="option" aria-selected="false" data-value="price-asc">Harga terendah</button>
+                <button type="button" class="custom-option" role="option" aria-selected="false" data-value="price-desc">Harga tertinggi</button>
+                <button type="button" class="custom-option" role="option" aria-selected="false" data-value="title-asc">Nama A–Z</button>
+                <button type="button" class="custom-option" role="option" aria-selected="false" data-value="rating-desc">Rating tertinggi</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="category-filter-panel">
+          <div class="category-filter-heading"><strong>Filter kategori</strong><span>Pilih kelompok barang yang ingin dilihat</span></div>
+          <div class="category-filters" id="category-filters" role="group" aria-label="Filter kelompok kategori">
+            <button type="button" class="category-chip active" data-category="all" aria-pressed="true">Semua kategori <span>—</span></button>
+          </div>
+        </div>
+
+        <div class="data-meta-row"><span class="data-source-label"><span class="status-dot" aria-hidden="true"></span> API REST terhubung ke DummyJSON</span><span class="last-updated-label">Terakhir berhasil dimuat: <strong id="last-updated">Belum ada data berhasil dimuat</strong></span></div>
+        <div id="loading-state" class="status-panel loading-panel" role="status" aria-live="polite">
+          <span class="loader" aria-hidden="true"></span><div><strong>Memuat katalog</strong><p>Menghubungi DummyJSON Products...</p></div>
+        </div>
+        <div id="error-state" class="status-panel error-panel" role="alert" hidden>
+          <span class="status-symbol" aria-hidden="true">!</span><div class="status-copy"><strong>Data belum berhasil dimuat</strong><p id="error-message">Periksa koneksi internet, lalu coba lagi.</p></div><button id="retry-button" class="button button-primary" type="button">Coba lagi <span aria-hidden="true">↻</span></button>
+        </div>
+        <div id="empty-state" class="empty-state" hidden><div class="empty-icon" aria-hidden="true">⌕</div><h3 id="empty-title">Produk tidak ditemukan</h3><p id="empty-description">Coba kata kunci lain atau ubah filter.</p><button id="reset-filters" type="button" class="button button-secondary">Reset filter</button></div>
+        <div id="product-grid" class="product-grid" aria-live="polite" aria-busy="true"></div>
+        <div class="load-more-row"><p id="result-summary">Menyiapkan katalog...</p><a href="#catalog" class="back-top-link">Kembali ke atas ↑</a></div>
+      </section>
+
+      <section class="notes-section" id="saved-notes" aria-labelledby="notes-title">
+        <div class="notes-intro"><p class="eyebrow"><span class="eyebrow-line"></span> PERSONAL SPACE</p><h2 id="notes-title">Catatan pilihanmu<span class="heading-period">.</span></h2><p>Simpan catatan singkat tentang produk yang sedang dipertimbangkan. Catatan harus berisi minimal 30 karakter.</p><div class="notes-decoration" aria-hidden="true"><span>✳</span><i></i><b></b></div></div>
+        <div class="note-panel">
+          <form id="note-form" novalidate>
+            <div class="form-row"><label for="note-product-trigger">Produk terkait</label>
+              <input type="hidden" id="note-product" name="product" value="">
+              <div class="custom-dropdown note-product-dropdown" id="note-product-dropdown">
+                <button class="custom-dropdown-trigger note-product-trigger" id="note-product-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="note-product-menu" disabled>
+                  <span id="note-product-current">Menunggu data produk...</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+                </button>
+                <div class="custom-dropdown-menu note-product-menu" id="note-product-menu" hidden>
+                  <label class="dropdown-search-label" for="note-product-search">Cari produk</label>
+                  <input class="dropdown-search-input" id="note-product-search" type="search" placeholder="Ketik nama produk..." autocomplete="off">
+                  <div class="custom-options-list" id="note-product-options" role="listbox" aria-label="Pilih produk"></div>
+                </div>
+              </div>
+            </div>
+            <div class="form-row"><div class="label-row"><label for="note-text">Isi catatan</label><span id="character-count" class="character-count">0 / 30 karakter minimum</span></div><textarea id="note-text" name="note" rows="4" minlength="30" placeholder="Tuliskan hal yang ingin anda ingat tentang produk ini..." aria-describedby="note-help note-error" required></textarea><p id="note-help" class="field-help">Gunakan minimal 30 karakter agar catatan anda cukup jelas.</p><p id="note-error" class="field-error" role="alert" hidden></p></div>
+            <button class="button button-primary note-submit" type="submit">Simpan catatan <span aria-hidden="true">↗</span></button>
+            <p id="note-success" class="form-success" role="status" hidden></p>
+          </form>
+          <div class="saved-notes-list"><div class="saved-notes-heading"><h3>Catatan tersimpan</h3><span id="notes-count" class="heading-count">0</span></div><div id="notes-list"><p class="notes-empty">Belum ada catatan tersimpan.</p></div></div>
+        </div>
+      </section>
+
+      <section class="source-strip" aria-label="Informasi sumber data"><div class="source-icon" aria-hidden="true">↗</div><div><strong>Data bersumber dari DummyJSON</strong><p>Informasi ditampilkan dari API eksternal. Ketersediaan data bergantung pada layanan dan koneksi internet.</p></div><a href="https://dummyjson.com/products?limit=0" target="_blank" rel="noopener noreferrer">Buka endpoint <span aria-hidden="true">↗</span></a></section>
+    </main>
+
+    <footer class="footer"><a class="footer-brand" href="#top">store_fidia<span>®</span></a><p>Mini Project Front-End · PTS Pemrograman Web 2026</p><div class="footer-id"><span>Fidiani</span><span class="footer-dot">·</span><span>2440304022</span></div></footer>
+  </div>
+</body>
+</html>
